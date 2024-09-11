@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Send Mail</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Candal&family=Gupter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <p id="heading" class="gupter-medium">Mass Mail Dispatcher</p>
+  <form method="post" class="form_design">
+    <label for="senderEmail">From :</label>
+    <input type="email" id="senderEmail" name="senderEmail" required>
+
+    <br><br><br>
+
+    <label for="subject" style="margin-top: -2em;z-index: 22;position: absolute;">Subject:</label>
+    <textarea id="subject" name="subject" required></textarea>
+
+    <br><br><br><br>
+
+    <label for="csvFile">CSV File:</label>
+    <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+
+    <br><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <br><br>
+
+    <input type="button" value="Send Emails" style="font-weight: bold;" onclick="sendEmails()">
+
+    <br>
+  </form>
+
+  <div style="display:flex">
+    <div class="valid_invalid margin">
+      <p>Valid Emails: <span id="validEmailCount"></span></p>
+      <div id="validEmails" style="float: left"></div>
+    </div>
+    <div class="valid_invalid margin_left">
+      <p style="color: #393E41;">Invalid Emails: <span id="invalidEmailCount"></span></p>
+      <div id="invalidEmails" style="float: left"></div>
+    </div>
+  </div>
+
+  <div class="word"></div>
+
+  <script src="new.js"></script>
+</body>
+
+</html>
